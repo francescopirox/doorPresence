@@ -3,7 +3,7 @@ import time
 
 def open():
 	R.setmode(R.BCM)	
-	R.setup(17, R.OUT, initial =0)
+	R.setup(17, R.OUT)
 	print ("Apertura in corso!")
 	R.output(17, 1)
 	time.sleep(1)
@@ -21,7 +21,9 @@ def check():
         	print "porta aperta"
 	R.cleanup()
 def controlPin(Pin):
+	R.setmode(R.BCM)
 	R.setup(Pin,R.IN)
 	Input= R.input(Pin)
 	return Input
 	R.cleanup()
+
