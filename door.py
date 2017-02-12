@@ -20,4 +20,8 @@ def check():
 	else:
         	print "porta aperta"
 	R.cleanup()
-
+def controlPin(Pin):
+	R.setup(Pin,R.IN)
+	Input= R.input(Pin)
+	return Input
+	R.cleanup()
